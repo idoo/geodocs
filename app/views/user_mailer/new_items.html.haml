@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h4
+      Hello!
+    %p
+      These files have recently been uploaded or updated. Please take some time to familiarise yourself with all the literature in your area.
+      %br
+    %p
+    - @items.each do |i|
+      = link_to(i.title, "http://geodocs.com.au" + i.document.to_s)
+      %br

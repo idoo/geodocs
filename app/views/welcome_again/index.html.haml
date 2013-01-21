@@ -1,0 +1,10 @@
+#myModal.modal{"aria-hidden" => "true", "aria-labelledby" => "Recently added items", :role => "dialog", :tabindex => "-1"}
+  .modal-header
+    %h3#myModalLabel Recently added items
+  .modal-body
+    %ul
+      - @new_items.each do |i|
+        %li{:class => "icon-book items-name"}= link_to(i.title, i.document.to_s)
+  .modal-footer
+    = link_to "Close", root_path, :class => "btn btn-large btn-block btn-primary"
+

@@ -1,0 +1,1 @@
+= link_to "#{node.title} (#{node.items.count + node.descendants.count})", url_for(opts[:namespace] + [node]), :class => (:active if current_page? (url_for(opts[:namespace] + [node])))

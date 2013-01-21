@@ -1,0 +1,1 @@
+$(function(){$("ol.nested_set > li").hover(function(){$(this).children("ol").show()},function(){$(this).children("ol").hide()}),$("ol.nested_set > li").children("ol").hide()});

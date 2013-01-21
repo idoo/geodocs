@@ -1,0 +1,15 @@
+
+
+class Category < ActiveRecord::Base
+  acts_as_nested_set
+  include TheSortableTree::Scopes
+
+  attr_accessible :parent_id, :path, :title, :lft, :rgt, :depth
+
+  belongs_to :parent, :class_name => 'Category'
+  has_many :children, :class_name => 'Category', :foreign_key => 'parent_id', :dependent => :destroy
+
+  has_many :items, :dependent => :destroy
+
+  validates_format_of :title, :with => /\A([[:alnum:]]|\-|_)+\z/
+end

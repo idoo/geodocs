@@ -1,0 +1,13 @@
+.pull-left
+  %h2{:class => "inline"} Categories
+  - @crumbs.each do |c|
+    %h2{:class => "inline"}= " -> " + c.title 
+  %h2{:class => "inline"}= " -> " + @category.title  
+%br
+%br
+  - @category.items.find(:all, :group => [:document]).each do |i|
+    %br
+    %li{:class => "icon-book items-name"}= link_to(i.title, i.document.to_s)
+  - if @category.items.empty?
+    %br
+    %p{:class => "items-name"} Sorry, this category is empty

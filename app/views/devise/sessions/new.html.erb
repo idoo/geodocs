@@ -1,0 +1,24 @@
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <h3 id="myModalLabel">Sign in</h3>
+  </div>
+  <div class="modal-body">
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+      <div><br />
+        <%= f.email_field :email, :placeholder => "Email"  %></div>
+      <div><br />
+        <%= f.password_field :password, :placeholder => "New password" %></div>
+      <div><br />
+        <% if devise_mapping.rememberable? -%>
+          <div><%= f.check_box :remember_me%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Remember me</i></div>
+        <% end -%>
+      </div>
+      <div><br />
+        <%= render :partial => "devise/shared/links" %></div>
+  </div>
+  <div class="modal-footer">
+    <%= f.submit "Sign in", :class => "btn btn-large btn-block btn-primary" %>
+     <% end %>
+  </div>
+</div>
