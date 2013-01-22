@@ -5,7 +5,7 @@ ActiveAdmin.register Item do
 
   config.per_page = 10
   
-  filter :category, :as => :select, :input_html => { :class => "chzn-select"}, :collection => nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.title}" }
+  filter :category, :as => :select, :input_html => { :class => "chzn-select"}, :collection => proc { nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.title}" } }
   filter :title
   filter :document
   filter :created_at

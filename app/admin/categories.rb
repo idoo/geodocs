@@ -1,7 +1,7 @@
 include CollectiveIdea::Acts::NestedSet::Helper
 
 ActiveAdmin.register Category do
-  filter :parent, :as => :select, :input_html => { :class => "chzn-select"}, :collection => nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.title}" }
+  filter :parent, :as => :select, :input_html => { :class => "chzn-select"}, :collection => proc { nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.title}" }}
   filter :title
   filter :path
   filter :created_at
