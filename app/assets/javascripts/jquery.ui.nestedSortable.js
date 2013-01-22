@@ -16,12 +16,12 @@
 	$.widget("mjs.nestedSortable", $.extend({}, $.ui.sortable.prototype, {
 
 		options: {
-			tabSize: 20,
+			tabSize: 99999,
 			disableNesting: 'mjs-nestedSortable-no-nesting',
 			errorClass: 'mjs-nestedSortable-error',
 			doNotClear: false,
 			listType: 'ol',
-			maxLevels: 25,
+			maxLevels: 0,
 			protectRoot: true,
 			rootID: null,
 			rtl: false,
