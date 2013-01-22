@@ -6,8 +6,7 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'quiet_assets' #quiet console
-gem 'thin'
+gem 'mysql2'
 
 gem 'devise'
 gem 'activeadmin'
@@ -37,10 +36,14 @@ gem 'awesome_nested_set'
 gem 'the_sortable_tree'
 gem "ckeditor"
 gem "mini_magick"
-
-gem 'pry'
 gem 'meta_search'
 gem 'squeel'
+
+#dev
+gem 'pry'
+gem 'quiet_assets' #quiet console
+gem 'thin'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
