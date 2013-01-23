@@ -24,8 +24,7 @@
 			maxLevels: 0,
 			protectRoot: true,
 			rootID: null,
-			rtl: false,
-			isAllowed: function(item, parent) { return true; }
+			rtl: false
 		},
 
 		_create: function() {
@@ -403,7 +402,10 @@
 			// Is the root protected?
 			// Are we trying to nest under a no-nest?
 			// Are we nesting too deep?
-			if (!o.isAllowed(this.currentItem, parentItem) ||
+			currentDepth = parseInt(this.currentItem.attr('data-depth')) + 1;
+			newDepth = level;
+
+			if (!(currentDepth == newDepth) ||
 				parentItem && parentItem.hasClass(o.disableNesting) ||
 				o.protectRoot && (parentItem == null && !isRoot || isRoot && level > 1)) {
 					this.placeholder.addClass(o.errorClass);
@@ -413,16 +415,12 @@
 						this.beyondMaxLevels = 1;
 					}
 			} else {
-				if (maxLevels < levels && maxLevels != 0) {
-					this.placeholder.addClass(o.errorClass);
-					this.beyondMaxLevels = levels - maxLevels;
-				} else {
-					this.placeholder.removeClass(o.errorClass);
-					this.beyondMaxLevels = 0;
-				}
+				this.placeholder.removeClass(o.errorClass);
+				this.beyondMaxLevels = 0;
 			}
 		}
 
+	
 	}));
 
 	$.mjs.nestedSortable.prototype.options = $.extend({}, $.ui.sortable.prototype.options, $.mjs.nestedSortable.prototype.options);
