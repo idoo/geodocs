@@ -44,6 +44,8 @@ gem 'pry'
 gem 'quiet_assets' #quiet console
 gem 'thin'
 
+gem 'therubyracer', require: 'v8', platform: :ruby
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
