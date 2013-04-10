@@ -33,7 +33,7 @@ gem 'jquery-fileupload-rails'
 gem 'carrierwave'
 
 gem 'awesome_nested_set'
-gem 'the_sortable_tree'
+gem 'the_sortable_tree' "~> 1.9.4"
 gem "ckeditor"
 gem "mini_magick"
 gem 'meta_search'
