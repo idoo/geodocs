@@ -1,5 +1,5 @@
 class @TheSortableTree
-  max_levels  = 3
+  max_levels  = 25
   rebuild_url = '/'
 
   init: ->
