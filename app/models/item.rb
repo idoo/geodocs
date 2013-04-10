@@ -4,4 +4,6 @@ class Item < ActiveRecord::Base
   belongs_to :category
 
   mount_uploader :document, DocumentUploader
+
+  validates_presence_of :title, :document, :category_id
 end

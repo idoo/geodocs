@@ -1,16 +1,16 @@
-%h3{:class => "icon-search"} &nbsp; Please input filename or part of filename
+%h3.icon-search Please input filename or part of filename
 %br
 %br
-= form_for @search, :url => search_path, :html => {:method => :get} do |f|
+= form_for @search, url: search_path, html: {method: :get} do |f|
   = f.text_field :title_contains, {:class => "input-xlarge", :placeholder => "Type something"}
-  %p.button= f.submit "Search", {:class =>"btn btn-info"}
+  %p.button= f.submit "Search", :class =>"btn btn-info"
 %hr
 - unless @searchable
-  %p{:class => "lead"} Input your search request
+  %p.lead Input your search request
 - else
   - if @Items.empty?
-    %p{:class =>"lead"} I'm sorry, no matching files found
+    %p.lead I'm sorry, no matching files found
   - else
     - @Items.each do |i|
-      %li{:class => "icon-book items-name"}= link_to(i.title, i.document.to_s)
+      %li.icon-book.items-name= link_to(i.title, i.document.to_s)
 

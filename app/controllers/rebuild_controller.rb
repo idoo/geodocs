@@ -1,5 +1,5 @@
 class RebuildController < ApplicationController
-  
+
   def make
     require 'fileutils'
 
@@ -57,13 +57,13 @@ class RebuildController < ApplicationController
     @list.each do |l|
       item = Item.new
       item.category_id = Category.find_by_path(File.dirname(l)).id
-      item.title = File.basename(l)
+      item.title = File.basename(l).gsub!('_',' ')
       item.document = File.open(File.join(Rails.root, l))
 
       item.save
     end
     
-    flash[:success] = "Links are successfuly rebuilded"
+    flash[:success] = "Links are successfully rebuilded"
 
     redirect_to admin_items_path  
 

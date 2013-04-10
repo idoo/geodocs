@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20120912103457) do
   add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
 
   create_table "categories", :force => true do |t|
-    t.string   "title"
+    t.string   "title",  :null => false
     t.string   "path"
     t.integer  "parent_id"
     t.datetime "created_at", :null => false
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20120912103457) do
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
   create_table "items", :force => true do |t|
-    t.string   "title"
+    t.string   "title",  :null => false
     t.string   "document"
     t.integer  "category_id"
     t.datetime "created_at",  :null => false

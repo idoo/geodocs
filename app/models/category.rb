@@ -7,7 +7,9 @@ class Category < ActiveRecord::Base
   # belongs_to :parent, :class_name => 'Category', :counter_cache => true
   # has_many :childrens, :class_name => 'Category', :foreign_key => 'parent_id', :dependent => :destroy
 
-  has_many :items, :dependent => :destroy
+  has_many :items, dependent: :destroy
+
+  validates_presence_of :title, :path
 
   validates_format_of :title, :with => /\A([[:alnum:]]|\ |\-|_)+\z/
 
