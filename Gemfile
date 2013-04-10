@@ -6,10 +6,10 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-#gem 'mysql2'
+gem 'mysql2'
 
 gem 'devise'
-gem 'activeadmin'
+gem 'activeadmin', "~> 0.4.3"
 gem "formtastic", "~> 2.1.1"
 gem 'chosen-rails'
 
@@ -60,3 +60,5 @@ gem 'therubyracer', require: 'v8', platform: :ruby
 
 # To use debugger
 # gem 'debugger'
+
+gem 'less-rails'
