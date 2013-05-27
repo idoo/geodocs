@@ -6,12 +6,12 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-#gem 'mysql2'
+gem 'mysql2'
 
 gem 'devise'
 gem 'activeadmin', "~> 0.4.3"
 gem "formtastic", "~> 2.1.1"
-gem 'chosen-rails'
+gem 'chosen-rails', '0.9.8.3'
 gem 'less-rails'
 gem 'therubyracer', require: 'v8', platform: :ruby
 
@@ -30,7 +30,7 @@ group :assets do
 
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '2.1.1'
 
 gem 'jquery-fileupload-rails'
 
