@@ -6,7 +6,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'mysql2'
+#gem 'mysql2'
 
 gem 'devise'
 gem 'activeadmin', "~> 0.4.3"
@@ -36,8 +36,8 @@ gem 'jquery-fileupload-rails'
 
 gem 'carrierwave'
 
-gem 'awesome_nested_set', "~> 2.1.4"
-gem "the_sortable_tree", "~> 1.9.4"
+gem 'awesome_nested_set', "2.1.4"
+gem "the_sortable_tree", "1.9.4"
 gem "ckeditor"
 gem "mini_magick"
 gem 'meta_search'
