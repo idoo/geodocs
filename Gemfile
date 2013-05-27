@@ -36,7 +36,7 @@ gem 'jquery-fileupload-rails'
 
 gem 'carrierwave'
 
-gem 'awesome_nested_set'
+gem 'awesome_nested_set', "~> 2.1.4"
 gem "the_sortable_tree", "~> 1.9.4"
 gem "ckeditor"
 gem "mini_magick"
