@@ -60,3 +60,5 @@ gem 'therubyracer', require: 'v8', platform: :ruby
 
 # To use debugger
 # gem 'debugger'
+
+gem 'less-rails'
