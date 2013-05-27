@@ -10,8 +10,8 @@
  *
  *= require_self
  *= require jquery.fileupload-ui
- *= require_tree .
  *= require sortable
  *= require comments_tree
+ *= require_tree .
  */
 
