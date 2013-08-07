@@ -53,10 +53,10 @@ class RebuildController < ApplicationController
     files = Dir.glob('public/data/**/*.*') #in disk
 
     @list = files - i_array
-
+    @list.delete_if{ |l| l == 'public/data' }
     @list.each do |l|
       item = Item.new
-      item.category_id = Category.find_by_path(File.dirname(l)).id if Category.find_by_path(File.dirname(l)).present?
+      item.category_id = Category.find_by_path(File.dirname(l)).id
       item.title = File.basename(l).gsub!('_',' ')
       item.document = File.open(File.join(Rails.root, l))
 
