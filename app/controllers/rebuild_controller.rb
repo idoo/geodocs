@@ -46,7 +46,7 @@ class RebuildController < ApplicationController
 
 
     Dir.glob('public/data/**/*.*').each do |filename|
-      new_filename = File.basename(filename).gsub(/[ ,^()]/, '_')
+      new_filename = File.basename(filename).gsub(/[ ,^()&~]/, '_')
       File.rename(filename, File.join(File.dirname(filename), new_filename))
     end
 
