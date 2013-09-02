@@ -5,7 +5,7 @@ class RebuildController < ApplicationController
 
     items = Item.all #items in the db
     categories = Category.all #categories in the db
-    
+
     #empty array for items
     i_array = Array.new
 
@@ -28,7 +28,7 @@ class RebuildController < ApplicationController
 
 
           parent = Category.find_by_path(parent_path)
-    
+
           category = Category.new
           category.title = new_name
           category.path = path
@@ -41,7 +41,7 @@ class RebuildController < ApplicationController
 
     #add /public to items path
     items.each do |i|
-      i_array << "public" + i.document.to_s  
+      i_array << "public" + i.document.to_s
     end
 
 
@@ -57,15 +57,15 @@ class RebuildController < ApplicationController
     @list.each do |l|
       item = Item.new
       item.category_id = Category.find_by_path(File.dirname(l)).id
-      item.title = File.basename(l).gsub!('_',' ')
+      item.title = File.basename(l).gsub('_',' ')
       item.document = File.open(File.join(Rails.root, l))
 
       item.save
     end
-    
+
     flash[:success] = "Links are successfully rebuilded"
 
-    redirect_to admin_items_path  
+    redirect_to admin_items_path
 
   end
 end
